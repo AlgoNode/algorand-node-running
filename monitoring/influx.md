@@ -1,4 +1,4 @@
-### Option 2 - InfluxDB / Telegraf / Grafana
+### InfluxDB / Telegraf / Grafana (by derova.algo)
 
 This assumes you're installing InfluxDB, Telegraf and Grafana on the same server (that is separate to your node)
 
