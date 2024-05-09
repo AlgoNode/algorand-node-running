@@ -43,4 +43,5 @@ Verify status
 ### Select Monitoring Option
 
 [Option 1: Netdata Cloud](netdata.md)
+
 [Option 2: InfluxDB, Telegraf, Grafana](influx.md)
