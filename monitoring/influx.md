@@ -1,5 +1,7 @@
 ### InfluxDB / Telegraf / Grafana (by derova.algo)
 
+![Sample Grafana Dashboard](images/influx_grafana_example.png)
+
 This assumes you're installing InfluxDB, Telegraf and Grafana on the same server (that is separate to your node)
 
 #### InfluxDB (Database)
