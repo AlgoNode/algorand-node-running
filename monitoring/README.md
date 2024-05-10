@@ -15,6 +15,13 @@ System Monitoring ensures the operating system and underlying hardware of your n
 Node Monitoring ensures your node daemon is online, synced with the network, and participating in consensus correctly.
 
 
+## Alerting
+
+Alerting ensures you are made aware of any issues as soon as possible. In these examples, this can be done using Netdata or Influx/Grafana depending on your choice.
+Another option is to use Allo Alerts, you don't need a server or any monitoring setup. You can provide the address you want to monitor, and preferred contact method, they'll handle the rest.
+![Alerting Information](alerting.md)
+
+
 # Monitoring Setup
 
 There are two examples listed in this guide for monitoring your node.

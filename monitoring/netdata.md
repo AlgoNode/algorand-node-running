@@ -1,4 +1,5 @@
-### Netdata Cloud (by SilentRhetoric)
+### Netdata Cloud 
+Credit: ![SilentRhetoric](https://github.com/SilentRhetoric))
 
 ![Netdata Dashboard](images/netdata_example.png)
 
