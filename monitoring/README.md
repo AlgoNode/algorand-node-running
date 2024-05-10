@@ -4,7 +4,6 @@ Participation Nodes play a crucial role in verifying transactions and securing t
 
 A larger and more geographically diverse network of nodes makes it harder for any single entity to gain control. Your contribution helps maintain a robust and secure network.
 
-The following guide uses Ubuntu 22.04 LTS Server for the OS, and assumes you already have a participation node operational.
 
 ## System Monitoring
 
@@ -41,6 +40,8 @@ Verify status
 > diagcfg metric status.
 
 ### Select Monitoring Option
+
+The following guides use Ubuntu 22.04 LTS Server for the OS, and assumes you already have a participation node operational.
 
 [Option 1: Netdata Cloud](netdata.md)
 
