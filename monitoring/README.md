@@ -33,11 +33,14 @@ See https://developer.algorand.org/docs/run-a-node/reference/config/
 In your node's data directory, use the `config.json.example` file to create a config file (if you don't have one already)
 > cp config.json.example config.json.
 
+Set Algorand to listen on all IPs (not just localhost / 127.0.0.1)
+`"EndpointAddress": "0.0.0.0:8080"`
+
 Enable node metrics
->diagcfg metric enable.
+> sudo -u algorand diagcfg metric enable -d /var/lib/algorand/
 
 Verify status
-> diagcfg metric status.
+> sudo -u algorand diagcfg metric status -d /var/lib/algorand/
 
 ### Select Monitoring Option
 
