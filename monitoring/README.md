@@ -53,3 +53,15 @@ The following guides use Ubuntu 22.04 LTS Server for the OS, and assumes you alr
 [Option 1: Netdata Cloud](netdata.md)
 
 [Option 2: InfluxDB, Telegraf, Grafana](influx.md)
+
+
+## Alerting Setup
+
+Once you have monitoring setup, it is highly recommended you look at configuring alerting rules.
+
+This ensures you are made aware of any issues as soon as possible. In these examples, this can be done using Netdata or Influx/Grafana depending on your choice.
+
+Another option is to use Allo Alerts, you don't need a server or any monitoring setup.
+You can provide the address you want to monitor, and preferred contact method, they'll handle the rest.
+
+[Alerting Information](alerting.md)
