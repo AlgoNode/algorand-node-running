@@ -1,5 +1,5 @@
 ### Netdata Cloud 
-Credit: ![SilentRhetoric](https://github.com/SilentRhetoric))
+Credit: [SilentRhetoric](https://github.com/SilentRhetoric)
 
 ![Netdata Dashboard](images/netdata_example.png)
 
