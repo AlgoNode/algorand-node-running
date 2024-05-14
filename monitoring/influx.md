@@ -1,10 +1,14 @@
 ### InfluxDB / Telegraf / Grafana (by derova.algo)
 
-![Sample Grafana Dashboard](images/influx_grafana_example.png)
+Sample Dashboard #1
+![Sample Grafana Dashboard 1](images/influx_grafana_example.png)
+
+Sample Dashboard #2
+![Sample Grafana Dashboard 2](images/influx_grafana_example2.png)
 
 It is recommended that you install InfluxDB and Grafana on a dedicated server that is separate to your Algorand node.
 The Telegraf agent will need to be installed on your node so that it can monitor your Nodes System Metrics (CPU, RAM, Disk, Network).
-If you only want to monitor the Algorand metrics, Telegraf can be installed on your Node or on your InfluxDB server.
+If you only want to monitor the Algorand metrics, Telegraf can be installed on your Node or on your InfluxDB server, you just need to update the configuration to point to the correct location where the metrics need to be stored.
 
 #### InfluxDB (Database)
 
