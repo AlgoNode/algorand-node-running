@@ -2,7 +2,9 @@
 
 ![Sample Grafana Dashboard](images/influx_grafana_example.png)
 
-This assumes you're installing InfluxDB, Telegraf and Grafana on the same server (that is separate to your node)
+It is recommended that you install InfluxDB and Grafana on a dedicated server that is separate to your Algorand node.
+The Telegraf agent will need to be installed on your node so that it can monitor your Nodes System Metrics (CPU, RAM, Disk, Network).
+If you only want to monitor the Algorand metrics, Telegraf can be installed on your Node or on your InfluxDB server.
 
 #### InfluxDB (Database)
 
@@ -52,11 +54,19 @@ Minimise this window as we'll come back to it shortly.
 
 #### Telegraf (Poller)
 
-Install Telegraf for your OS of choice by going to https://www.influxdata.com/downloads. As above, we'll install it for Ubuntu / Debian. The keys were already installed in the above step so no need to do it again, just run.
+Install Telegraf for your OS of choice by going to https://www.influxdata.com/downloads. As above, we'll install it for Ubuntu / Debian.
+We're installing this onto our Algorand Node so that we can monitor the system metrics too, so we'll need to add the keys to this server.
 
->sudo apt-get install telegraf
+> wget -q https://repos.influxdata.com/influxdata-archive_compat.key
+
+> echo '393e8779c89ac8d958f81f942f9ad7fb82a25e133faddaf92e15b16e6ac9ce4c influxdata-archive_compat.key' | sha256sum -c && cat influxdata-archive_compat.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/influxdata-archive_compat.gpg > /dev/null
+
+> echo 'deb [signed-by=/etc/apt/trusted.gpg.d/influxdata-archive_compat.gpg] https://repos.influxdata.com/debian stable main' | sudo tee /etc/apt/sources.list.d/influxdata.list
+
+> sudo apt-get update && sudo apt-get install telegraf
 
 Edit the Telegraf configuration file
+
 >sudo nano /etc/telegraf/telegraf.conf
 
 Locate the `OUTPUT PLUGINS`section, and enable `outputs.influxdb_v2` by uncommenting the following lines and adding your information as recorded in the previous steps.
@@ -66,7 +76,7 @@ Locate the `OUTPUT PLUGINS`section, and enable `outputs.influxdb_v2` by uncommen
 ```
 [[outputs.influxdb_v2]]
 
-urls = ["http://127.0.0.1:8086"]
+urls = ["http://Your_Influx_Server_IP:8086"]
 
 token = "Insert_API_Key_Here"
 
@@ -76,12 +86,14 @@ bucket = "Insert_Bucket"
 ```
 
 Locate the `INPUT PLUGINS` section (serch for `inputs.cpu` which should take you to the top of the inputs section) and add the Prometheus plugin configuration with the URL pointing to your Algorand Node IP/Hostname.
+You can enter your Node IP or just "127.0.0.1" / "localhost" as the Telegraf agent is on the same server.
 
 >[[inputs.prometheus]]
 
 >  urls = ["http://Your_Node_IP:9100/metrics"]
 
 Restart the Telegraf Service
+
 >sudo systemctl restart telegraf.service
 
 Verify the data is being scraped and recorded by going to your InfluxDB Web Interface (*`http://Your_Influx_Server_IP:8086`*) and clicking on `Data Explorer` in the menu.
@@ -99,8 +111,9 @@ Or you can continue on and setup Grafana for your graphing / dashboard needs if 
 
 #### Grafana (Graphing Frontend)
 
-Install Grafana for your OS of choice by going to https://grafana.com/grafana/download. As above, we'll install it for Ubuntu / Debian.
-
+Install Grafana for your OS of choice by going to https://grafana.com/grafana/download.
+It is recommended to install this on the same dedicated server as your InfluxDB instance.
+As above, we'll install it for Ubuntu / Debian.
 
 >sudo apt-get install -y adduser libfontconfig1 musl
 
