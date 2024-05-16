@@ -48,9 +48,14 @@ Test the contact point and if successful, save your settings.
 An easy way to setup alert rules is to go to your dashboard, find a panel containing a metric you want to be alerted on, and select the 3 dots when hovering over it, go to more then "New Alert Rule".
 This will populate the query for us in the alert
 
-We want an expression as "Input A is above 100"
-*Note to self, group name isn't working
+Give your alert a name, configure the thresholds per the query at the top, for example "Input A is above 100"
+If you click on preview, you can see a red line of your set point, and the current values from the query. This gives a rough idea of the alert conditions.
 
+Add this to an Alerts folder, and create a new Evaluation Group.
+Configure the evaluation/polling times to your own needs.
+Save the alert
+
+Update the Notification policy to use your contact point
 
 
 ### Allo Alerts
