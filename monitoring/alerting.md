@@ -56,7 +56,7 @@ Give your alert a name, configure the thresholds you want per the query at the t
 
 If you click on preview, you can see a red line of your set point, and the current values from the query. This gives a rough idea of the alert conditions.
 
-![Grafana_Preview](images/grafana_preview.png)
+![Grafana_Preview](images/grafana_alert_preview.png)
 
 Add this to an Alerts folder, and create a new Evaluation Group (Eg: Group Name - 'Monitor every 10 seconds', Evaluation interval - '10s').
 Configure the evaluation/polling times to your own needs if 10s is too quick.
