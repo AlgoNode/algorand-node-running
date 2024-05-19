@@ -12,13 +12,16 @@ This isn't an important metric to alert on for operations, but will assist with 
 ### InfluxDB Alerting
 
 *Draft*
-In the left menu, select the Alerts
-Threshold Check
 
-Define Query:
-Select your bucket, and find and select "algod_tx_pool_count" measurement. Select the gauge field. Change the Aggregate to Last.
+In the left menu, select Alerts and configure a Threshold Check.
 
-Configure Check:
+<strong>Define Query</strong>
+
+Select your bucket, find and select the measurement you want to be alerted on, in this example we're using the "algod_tx_pool_count" measurement.
+Our example we'll select the gauge field and change the aggregate type to 'Last'.
+
+<strong>Configure Check</strong>
+
 Schedule every 5s, Offset 0s
 Critical above 100
 Warning above 80
@@ -26,21 +29,25 @@ Tick
 
 Name the check, "Transactions in pool over 100"
 
-
 Move onto the notification endpoints and add your preferred notification method.
+
 At the time of writing this is limited to HTTP, Slack or PagerDuty
 
-
 Then move onto your notification rules.
+
 You can set it to run every 5s when status is equal to Crit. Then alert to the channel you configured in the previous step
 
 
 ### Grafana Alerting
 
-In the left menu, go to the Alerting section.
+To get started with Alerting within Grafana, go to the alerting section under the main menu.
+
+#### Contact Point
+
 We'll configure the contact points first, this is how / where you want to be notified.
 
 Create a new contact point, in this example we'll use Discord.
+
 Enter the Discord webhook URL. You can obtain this from the channel settings menu of a server you manage (integrations, webhooks).
 
 Setup optional titles / content, and if you want to use the Discord web hook name (I'd recommend this, otherwise it just says "Grafana").
@@ -55,10 +62,13 @@ Test the contact point and if successful, save your settings.
 
 ![Grafana_Test](images/grafana_test_alert.png)
 
+#### Alert Rules
+
 An easy way to setup alert rules is to go to your dashboard, find a panel containing a metric you want to be alerted on, and select the 3 dots when hovering over it, go to more then "New Alert Rule".
+
 This will populate the query for us in the alert.
 
-Give your alert a name, configure the thresholds you want per the query at the top. Example below:
+Give your alert a name, configure the thresholds you want per the query at the top.
 
 ![Grafana_Example](images/grafana_alert_1.png)
 
@@ -67,13 +77,21 @@ If you click on preview, you can see a red line of your set point, and the curre
 ![Grafana_Preview](images/grafana_alert_preview.png)
 
 Add this to an Alerts folder, and create a new Evaluation Group (Eg: Group Name - 'Monitor every 10 seconds', Evaluation interval - '10s').
+
 Configure the evaluation/polling times to your own needs if 10s is too quick.
+
 Save the alert.
 
+#### Notification Policies
+
 In the left hand menu under alerting, go to Notification policies and update the default policy to point to use your contact point.
+
 You should now get alerts when the specified thresholds are met.
 
+#### Example Alert
+
 To force an alert while writing this guide, I lowered the threshold to 30 to force it to alert.
+
 When the condition is no longer met, a resolved message will be sent per the examples below, where my rule name was "Messages in the Pool >30".
 
 ![Grafana_Resolved](images/grafana_discord_resolved.png)
