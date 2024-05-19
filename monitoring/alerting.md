@@ -47,6 +47,8 @@ Enter the Discord webhook URL. You can obtain this from the channel settings men
 Setup optional titles / content, and if you want to use the Discord web hook name (I'd recommend this, otherwise it just says "Grafana")
 Test the contact point and if successful, save your settings.
 
+While in this section, go to Notification Templates and create a new template.*** Look into this
+
 An easy way to setup alert rules is to go to your dashboard, find a panel containing a metric you want to be alerted on, and select the 3 dots when hovering over it, go to more then "New Alert Rule".
 This will populate the query for us in the alert.
 
