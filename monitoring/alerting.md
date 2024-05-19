@@ -3,15 +3,15 @@
 Monitoring is a great start, but to keep ontop of issues as they occur it's important to have alerting configured so you can resolve the issues as promptly as posssible.
 
 In the examples below, we're going to configure a simple alert - trigger if there are more than 100 txns in the pool.
-This isn't an important metric to alert on for operations, but will assist in understanding how to setup alerts.
+This isn't an important metric to alert on for operations, but will assist with understanding how to setup alerts.
 
 ### Netdata Alerting
 
-<Guide Here>
+<TBC - Guide Here>
 
 ### InfluxDB Alerting
 
-*Draft
+*Draft*
 In the left menu, select the Alerts
 Threshold Check
 
@@ -37,17 +37,20 @@ You can set it to run every 5s when status is equal to Crit. Then alert to the c
 
 ### Grafana Alerting
 
-*Draft
-In the left menu, select Alerting
+In the left menu, go to the Alerting section.
 We'll configure the contact points first, this is how / where you want to be notified.
 
-Create a new contact point, in this example we'll use Discord
-Enter the Discord webhook URL. You can obtain this from the channel settings menu of a server you manage (integrations, webhooks)
+Create a new contact point, in this example we'll use Discord.
+Enter the Discord webhook URL. You can obtain this from the channel settings menu of a server you manage (integrations, webhooks).
 
-Setup optional titles / content, and if you want to use the Discord web hook name (I'd recommend this, otherwise it just says "Grafana")
+Setup optional titles / content, and if you want to use the Discord web hook name (I'd recommend this, otherwise it just says "Grafana").
+
+To stop Grafana from sending a wall of text for an alert, I've put the following in the Message Content field.
+{{range.Alerts -}}{{ .Status}} {{ .Labels.alertname }}{{end}}
+
 Test the contact point and if successful, save your settings.
 
-While in this section, go to Notification Templates and create a new template.*** Look into this
+![Grafana_Test](images/grafana_test_alert.png)
 
 An easy way to setup alert rules is to go to your dashboard, find a panel containing a metric you want to be alerted on, and select the 3 dots when hovering over it, go to more then "New Alert Rule".
 This will populate the query for us in the alert.
@@ -67,19 +70,14 @@ Save the alert.
 In the left hand menu under alerting, go to Notification policies and update the default policy to point to use your contact point.
 You should now get alerts when the specified thresholds are met.
 
-I've lowered the threshold to 30 to force it to alert, and this has come through.
-
-![Grafana_Alert](images/grafana_discord_alert.png)
-
-When the condition is no longer met, a resolved alert will be sent.
+To force an alert while writing this guide, I lowered the threshold to 30 to force it to alert.
+When the condition is no longer met, a resolved message will be sent per the examples below, where my rule name was "Messages in the Pool >30".
 
 ![Grafana_Resolved](images/grafana_discord_resolved.png)
 
 ### Allo Alerts
 
-<Guide Here>
-
-
+<TBC - Guide Here>
 
 
 
