@@ -46,7 +46,10 @@ Enter the Discord webhook URL. You can obtain this from the channel settings men
 Setup optional titles / content, and if you want to use the Discord web hook name (I'd recommend this, otherwise it just says "Grafana").
 
 To stop Grafana from sending a wall of text for an alert, I've put the following in the Message Content field.
+
+```
 {{range.Alerts -}}{{ .Status}} {{ .Labels.alertname }}{{end}}
+```
 
 Test the contact point and if successful, save your settings.
 
