@@ -11,32 +11,35 @@ This isn't an important metric to alert on for operations, but will assist with 
 
 ### InfluxDB Alerting
 
-*Draft*
+To get started with Alerting within InfluxDB, go to the alerting section under the main menu.
 
-In the left menu, select Alerts and configure a Threshold Check.
+#### Threshold Check.
 
-<strong>Define Query</strong>
+Define your query by selecting your bucket, find and select the measurement you want to be alerted on, in this example we're using the "algod_tx_pool_count" measurement.
 
-Select your bucket, find and select the measurement you want to be alerted on, in this example we're using the "algod_tx_pool_count" measurement.
-Our example we'll select the gauge field and change the aggregate type to 'Last'.
+We'll select the gauge field and change the aggregate type to 'Last'.
 
-<strong>Configure Check</strong>
+#### Configure Check
 
-Schedule every 5s, Offset 0s
-Critical above 100
-Warning above 80
-Tick
+Here you specify your conditions, for example I'll schedule the check every 5s, with offset as 0s
 
-Name the check, "Transactions in pool over 100"
+- Critical above 100
 
-Move onto the notification endpoints and add your preferred notification method.
+- Warning above 80
+
+Click on the tick at the top to save the checks.
+
+Name the check by clicking the pencil icon and call it something useful like "Transactions in pool over 100".
+
+#### Notification Endpoints
+
+Under notification endpoints, add your preferred notification method.
 
 At the time of writing this is limited to HTTP, Slack or PagerDuty
 
-Then move onto your notification rules.
+#### Notification Rules
 
 You can set it to run every 5s when status is equal to Crit. Then alert to the channel you configured in the previous step
-
 
 ### Grafana Alerting
 
