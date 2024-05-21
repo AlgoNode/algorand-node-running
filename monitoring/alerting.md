@@ -19,6 +19,10 @@ Define your query by selecting your bucket, find and select the measurement you 
 
 We'll select the gauge field and change the aggregate type to 'Last'.
 
+Name the check by clicking the pencil icon and call it something useful like "Transactions in pool over 100"
+
+![Influx Query](images/influx_alert_query.png)
+
 #### Configure Check
 
 Here you specify your conditions, for example I'll schedule the check every 5s, with offset as 0s
@@ -29,7 +33,7 @@ Here you specify your conditions, for example I'll schedule the check every 5s, 
 
 Click on the tick at the top to save the checks.
 
-Name the check by clicking the pencil icon and call it something useful like "Transactions in pool over 100".
+![Influx Alert Checks](images/influx_alert_checks.png)
 
 #### Notification Endpoints
 
@@ -37,9 +41,13 @@ Under notification endpoints, add your preferred notification method.
 
 At the time of writing this is limited to HTTP, Slack or PagerDuty
 
+![Influx Notifications](images/influx_alert_notification.png)
+
 #### Notification Rules
 
 You can set it to run every 5s when status is equal to Crit. Then alert to the channel you configured in the previous step
+
+![Influx Rules](images/influx_alert_rules.png)
 
 ### Grafana Alerting
 
