@@ -50,6 +50,8 @@ proper guides instead of external links
 
 ### Updating
 
+Updating is usually an automatic process but you can do it maually as explained in this [updating guide](/running/updating.md)
+
 ### Monitoring
 
 ### Troubleshooting
