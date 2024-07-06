@@ -116,6 +116,8 @@ Third party snapshots can be used for Archival nodes if you trust that they have
 
 ### Updating
 
+Updating is usually an automatic process but you can do it manually as explained in this [updating guide](/running/updating.md)
+
 ### Monitoring
 
 Monitoring your node is cruicial to ensuring the node is operating as expected and protecting the network.
