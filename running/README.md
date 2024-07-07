@@ -1,19 +1,20 @@
 # Running an Algorand Node
+
 This guide explains how to run an Algorand node and why it's important for participating in the Algorand ecosystem.
 
-## Why Run a Node?
+## Why run a Node?
 
-The Algorand blockchain is a decentralized network, meaning it doesn't rely on a single authority to validate transactions.
-Instead, nodes distributed across the globe work together to secure the network.
-
-By running a node, you contribute to this decentralization and gain several benefits:
+Generally blockchains that are more decentalised are more secure against malicious attacks.
+As an investor or NFT artist, think of your node like your own little security guard helping to protect your assets - while keeping an eye out for everyone elses too!
+If you're a developer, you can use your own infrastructure for your application instead of relying on third party nodes / APIs (which may incur additional costs).
 
 ## Getting Started
 
-There are two main approaches to running an Algorand node:
+Firstly, you need to ensure that you meet the requirements of running a node.
+A node requires resources that are available 24/7 such as power and internet.
 
-Manual Installation: This method involves downloading the Algorand software and configuring it yourself. While offering more control, it requires technical expertise. Refer to the official Algorand documentation for detailed instructions: https://developer.algorand.org/
+If running within a home environment, it's recommended to have some level of protection against power outages such as a UPS (Battery) for your node and the network equipment (Routers/Switches) it connects to.
+Ensure that your system has sufficient resources (CPU, RAM, Disk) and are actively monitoring it for faults.
 
-Docker: Docker provides a containerized environment for running the Algorand node. This simplifies the process and ensures consistency across different systems. Several tools like Algorand Sandbox and Algorand Node Manager can further streamline node management with Docker: https://developer.algorand.org/tutorials/exploring-the-algorand-sandbox/
-
-Running a node requires ongoing disk space and bandwidth usage. Ensure your system has sufficient resources and are actively monitoring it.
+If you're participating in concensus, you must not run a node on a device that is frequently going offline.
+For example: Your personal laptop that may go to sleep or disconnects from the network when you roam.
