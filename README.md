@@ -27,7 +27,7 @@ From your server terminal, enter:
 ```sudo curl -L http://get.pixelnode.org | sudo bash```
 
 Once the installation is complete, you should be able to access the Pixelnode web interface on port 8000 of your server's public IP address (e.g., http://<your_server_ip>:8000).
-_If you're running this on your home network and not a VPS (Linode, DigitalOcean, etc), you won't be able to access it via the IP provided until you update your NAT / Port Forward rules on your router to direct the traffic to the machines Local IP (Port 4190, and 8000)_
+_If you're running this on your home network and not a VPS (Linode, DigitalOcean, etc), you won't be able to access it via the IP provided until you update your NAT / Port Forward rules on your router to direct the traffic to the machines Local IP - TCP Ports 3000 (Grafana), 4190 (Algod-8080), 8000 (WebUI), 9090 (Prometheus). Please be aware that exposing port 3000 will allow anyone to access your Grafana instance using the default credentials (admin/admin). If this is enabled, login immediately and change the password or lock down your NAT rule to only allow your IP._
 
 On the WebGUI, follow the on-screen instructions to install the node, specify the network (Mainnet, Testnet, etc.) and setting your stake amount (for participation nodes).
 
