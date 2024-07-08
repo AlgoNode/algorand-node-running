@@ -14,24 +14,39 @@ proper guides instead of external links
 ### Mouse friendly one-click nodes
 
 #### Windows
-* [Aust One Click Node](https://github.com/AustP/austs-one-click-node)
+[Aust One Click Node](https://github.com/AustP/austs-one-click-node) is a simple installer to get up and running on Windows with minimal effort.
+Download the exe file under the releases section on the Github page, run the exe (then go More Info and Allow).
+After a few seconds you'll see the interface load, and start syncing.
+
+Under the settings menu, be sure to enable "Start Node on Startup" to ensure the software runs if the node ever loses power or reboots.
 
 #### Linux/MacOS
 
-[Pixelnode](https://www.pixelnode.org) provide a simple install script to get your node up and running as quickly and easily as possible.
+[Pixelnode](https://www.pixelnode.org) provide a simple install script to get your node up and running as quickly and easily as possible using Docker containers.
 From your server terminal, enter:
 ```sudo curl -L http://get.pixelnode.org | sudo bash```
 
-Once the installation is complete, you should be able to access the Pixelnode web interface on port 8000 of your server's IP address (e.g., http://<your_server_ip>:8000).
-Follow the on-screen instructions to configure your Pixelnode such as specifying the network type (Mainnet, Testnet, etc.) and setting your stake amount (for participation nodes).
+Once the installation is complete, you should be able to access the Pixelnode web interface on port 8000 of your server's public IP address (e.g., http://<your_server_ip>:8000).
+_If you're running this on your home network and not a VPS (Linode, DigitalOcean, etc), you won't be able to access it via the IP provided until you update your NAT / Port Forward rules on your router to direct the traffic to the machines Local IP_
+
+On the WebGUI, follow the on-screen instructions to install the node, specify the network (Mainnet, Testnet, etc.) and setting your stake amount (for participation nodes).
 
 The Pixelnode web interface will display the status of your Algorand node. You can see if it's running, syncing with the network (catching up), and other details.
 
 ### Terminal managed
 
 * [Official one-click-node](https://github.com/algorandfoundation/algorun), docker based
-* Linux node on Ubuntu on Windows WSL
+
+* Linux Node on Ubuntu on Windows WSL
+Ensure that you have virtualisation enabled in your BIOS/UEFI settings (VT-x/AMD-V) and that it's supported by your CPU.
+Install the Windows Subsystem for Linux:
+```wsl --install```
+Reboot and run the Ubuntu app, follow the on-screen prompts to setup your WSL account / environment.
+Update the distro by running "sudo apt update".
+Then install the node software using the Linux guide.
+
 * Linux node on Ubuntu
+
 
 ## UI / Web interface add-ons
 
