@@ -124,7 +124,7 @@ This allows applications (eg: Blockchain explorers such as [allo.info](https://a
 
 ### Boostrapping
 
-[Bootstrapping](running/boostrapping.md) involves getting your node in sync with other nodes on the network.
+[Bootstrapping](running/bootstrapping.md) involves getting your node in sync with other nodes on the network.
 
 ### Start/Stop/Auto
 
