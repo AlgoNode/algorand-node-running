@@ -27,7 +27,7 @@ From your server terminal, enter:
 ```sudo curl -L http://get.pixelnode.org | sudo bash```
 
 Once the installation is complete, you should be able to access the Pixelnode web interface on port 8000 of your server's public IP address (e.g., http://<your_server_ip>:8000).
-_If you're running this on your home network and not a VPS (Linode, DigitalOcean, etc), you won't be able to access it via the IP provided until you update your NAT / Port Forward rules on your router to direct the traffic to the machines Local IP_
+_If you're running this on your home network and not a VPS (Linode, DigitalOcean, etc), you won't be able to access it via the IP provided until you update your NAT / Port Forward rules on your router to direct the traffic to the machines Local IP (Port 4190, and 8000)_
 
 On the WebGUI, follow the on-screen instructions to install the node, specify the network (Mainnet, Testnet, etc.) and setting your stake amount (for participation nodes).
 
